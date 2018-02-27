@@ -1,4 +1,4 @@
-FROM java:7
+FROM picoded/ubuntu-openjdk-8-jdk
 
 RUN apt-get update ; \
   apt-get -y install xvfb \
@@ -8,7 +8,7 @@ RUN apt-get update ; \
     ratpoison ; \
   apt-get clean
 
-RUN useradd -u 1999 -U -m -d /vnc vnc
+RUN useradd -u 1000 -U -m -d /vnc vnc
 
 COPY entrypoint.sh /vnc/entrypoint.sh
 
